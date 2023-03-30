@@ -1,0 +1,68 @@
+
+{% extends 'generic/object.html' %}
+{% load buttons %}
+{% load custom_links %}
+{% load helpers %}
+{% load perms %}
+{% load plugins %}
+{% load tabs %}
+
+
+{% block controls %}
+  {# Clone/Edit/Delete Buttons #}
+  <div class="controls">
+    <div class="control-group">
+      {% plugin_buttons object %}
+
+      {# Extra buttons #}
+      {% block extra_controls %}{% endblock %}
+
+      {% if request.user|can_change:object %}
+        {% edit_button object %}
+      {% endif %}
+
+    </div>
+    <div class="control-group">
+      {% custom_links object %}
+    </div>
+  </div>
+{% endblock controls %}
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="col col-md-6">
+      <div class="card">
+        <h5 class="card-header">Number Info</h5>
+        <div class="card-body">
+          <table class="table table-hover attr-table">
+            <tr>
+              <th scope="row">Number</th>
+              <td>{{ object.number }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Site</th>
+              <td>{{ object.site }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Assign To</th>
+              <td>{{ object.assignto }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Function</th>
+              <td>{{ object.function }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Status</th>
+              <td>{{ object.status }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Comments</th>
+              <td>{{ object.comments }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      {% include 'inc/panels/custom_fields.html' %}
+    </div>
+  </div>
+{% endblock content %}
