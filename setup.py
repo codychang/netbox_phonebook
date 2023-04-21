@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='netbox_phonebook',
-    version='0.1',
+    version='0.3',
     description='Netbox Phonebook - User phone number management plugin for NetBox.',
     author='Cody Chang',
     author_email='codychangus@icloud.com',

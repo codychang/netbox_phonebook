@@ -4,7 +4,7 @@ class PhonebookConfig(PluginConfig):
     name = 'netbox_phonebook'
     verbose_name = 'netbox_phonebook'
     description = 'Netbox Phonebook - User phone number management plugin for NetBox.'
-    version = '0.1'
+    version = '0.3'
     author = 'Cody Chang'
     author_email = 'codychangus@icloud.com'
     base_url = 'netbox_phonebook'
