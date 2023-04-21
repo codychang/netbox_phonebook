@@ -45,7 +45,7 @@ class NumberForm(NetBoxModelForm):
 
 class NumberFilterForm(NetBoxModelForm):
     site = forms.ModelChoiceField(
-        queryset=Site.objects.filter(region__name='AM'),
+        queryset=Site.objects.all(),
         required=False,
     )
 
